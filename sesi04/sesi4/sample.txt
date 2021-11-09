@@ -1,0 +1,6 @@
+my first file
+This file
+
+contains three lines
+
+append new text line
