@@ -47,8 +47,7 @@ def temperatureConverter(fromI, to):
         number = int(fromI[:-1])
         tempKey = fromI[-1]
     except ValueError:
-        print("Wrong Input Value! Please Try again [ex value: 30c || 20F || 5K]")
-        print("(not case sensitive!! AND Cannot convert to same temperature[ex: 30c to c])")
+        errMess()
 
     else:
         if tempKey.upper() == "C":
@@ -57,8 +56,7 @@ def temperatureConverter(fromI, to):
             elif to.upper() == "F":
                 print("Celsius to Fahrenheit: "+ f_to_c_vice_versa(number,to) + " °F")
             else:
-                print("Wrong Input Value! Please Try again [ex value: 30c || 20F || 5K]")
-                print("(not case sensitive!! AND Cannot convert to same temperature[ex: 30c to c])")
+                errMess()
 
         elif tempKey.upper() == "K":
             if to.upper() == "C":
@@ -67,19 +65,16 @@ def temperatureConverter(fromI, to):
             elif to.upper() == "F":
                 print("Kelvin to Fahrenheit: " + f_to_k_vice_versa(number,to) + " °F")
             else:
-                print("Wrong Input Value! Please Try again [ex value: 30c || 20F || 5K]")
-                print("(not case sensitive!! AND Cannot convert to same temperature[ex: 30c to c])")
+                errMess()
         elif tempKey.upper() == "F":
             if to.upper() == "C":
                 print("Fahrenheit to Celsius: "+ f_to_c_vice_versa(number,to) + " °C")
             elif to.upper() == "K":
                 print("Fahrenheit to Kelvin: "+ f_to_k_vice_versa(number,to) + " K")
             else:
-                print("Wrong Input Value! Please Try again [ex value: 30c || 20F || 5K]")
-                print("(not case sensitive!! AND Cannot convert to same temperature[ex: 30c to c])")
+                errMess()
         else:
-            print("Wrong Input Value! Please Try again [ex value: 30c || 20F || 5K]")
-            print("(not case sensitive!! AND Cannot convert to same temperature[ex: 30c to c])")
+            errMess()
 
 
 
@@ -90,6 +85,12 @@ def printSpace():
     for lop in range(2):
         print("")
 
+def errMess():
+    '''
+    for print repeatitive error message on temperatureConverter function
+    '''
+    print("Wrong Input Value! Please Try again [ex value: 30c || 20F || 5K]")
+    print("(not case sensitive!! AND Cannot convert to same temperature[ex: 30c to c])")
 
 flag = 0
 while flag == 0:
